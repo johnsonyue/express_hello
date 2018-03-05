@@ -3,6 +3,7 @@ html(language=en)
   head
     link(href="/public/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet")
     link(href="/public/bootstrap-3.3.7-dist/css/dashboard.css" rel="stylesheet")
+    link(href="/public/bootstrap-3.3.7-dist/css/flag-icon-css/css/flag-icon.css" rel="stylesheet")
   
   body
     script src="/public/bootstrap-3.3.7-dist/js/jquery.min.js"
@@ -40,15 +41,15 @@ html(language=en)
       div(class="row")
         div(class="col-md-2 sidebar")
           ul(class="nav nav-sidebar")
-            li
-              a overview
+            li(class=active=='overview'?"active":'')
+              a(style="cursor: pointer;") overview
           ul(class="nav nav-sidebar")
-            li
-              a statistics
-            li
-              a map
+            li(class=active=='IP'?"active":'')
+              a(style="cursor: pointer;") IP
+            li(class=active=='router'?"active":'')
+              a(style="cursor: pointer;") router
           ul(class="nav nav-sidebar")
-            li(class="active")
-              a router
+            li(class=active=='PoP'?"active":'')
+              a(style="cursor: pointer;") PoP
         div(class="col-md-10 col-md-offset-2 main")
           block content
