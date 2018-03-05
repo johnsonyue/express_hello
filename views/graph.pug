@@ -13,28 +13,4 @@ block content
     
       button(type="submit" class="form-control pull-right" id="go_btn") go
       input(type="text" class="form-control pull-right" placeholder="page" id="go_text")
-  div(class="col-md-10")
-    table(class="table table-bordered table-hover col-md-10" id="ip_table")
-      thead
-        th #
-        th
-          a(style="cursor: pointer;") IP
-            span(class="glyphicon glyphicon-menu-down")
-        th icon
-        th
-          a(style="cursor: pointer;") ASN
-            span(class="glyphicon glyphicon-menu-down")
-        th neighbours
-        th topology
-      tbody
-        tr 
-          td 0
-          td 202.118.236.229
-          td
-            span(class="flag-icon flag-icon-cn")
-            | &nbsp CN
-          td 4538
-          td
-            a(style="cursor: pointer;") details
-          td
-            a(style="cursor: pointer;") details
+  div(class="col-md-10" id="table_div")

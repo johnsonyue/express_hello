@@ -6,8 +6,10 @@ html(language=en)
     link(href="/public/bootstrap-3.3.7-dist/css/flag-icon-css/css/flag-icon.css" rel="stylesheet")
   
   body
-    script src="/public/bootstrap-3.3.7-dist/js/jquery.min.js"
-    script src="/public/bootstrap-3.3.7-dist/js/bootstrap.min.js"
+    script(src="/public/bootstrap-3.3.7-dist/js/jquery.min.js")
+    script(src="/public/bootstrap-3.3.7-dist/js/bootstrap.min.js")
+    each file in include
+      script(src=file)
 
     nav(class="navbar navbar-default navbar-fixed-top")
        div(class="container-fluid")
