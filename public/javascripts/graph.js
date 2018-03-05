@@ -14,7 +14,7 @@ $(document).ready(function(){
   var options = {}
   var container = document.getElementById('table_div');
   
-  var table = new mytable.myTable(container, data, options);
+  var table = new mylib.myTable(container, data, options);
 });
 */
 
@@ -22,7 +22,7 @@ $(document).ready(function(){
   var options = {}
   var container = document.getElementById('table_div');
   
-  var table = new mytable.myTableOnline(container, request, options);
+  var table = new mylib.myTableOnline(container, request, options);
 
   //todo: tbl.pager_front, tbl.page_size, tbl.refresh to request data and refresh table.//
   function request(tbl){
@@ -31,9 +31,19 @@ $(document).ready(function(){
       type: 'GET',
       async: false,
       success: function(d){
-        tbl.refresh(d); //remember to manually refresh the tbl.
+        tbl.refresh(d); //important!! remember to manually refresh the tbl.
       },
       error: function (jqXhr, textStatus, errorMessage) {console.log('Error' + errorMessage);}
     });
   };
+  
+  $.ajax("/public/small.json", {
+    type: 'GET',
+    async: false,
+    success: function(data){
+      var container = document.getElementById('graph_div');
+      var graph = new mylib.myGraph(container, data);
+    },
+    error: function (jqXhr, textStatus, errorMessage) {console.log('Error' + errorMessage);}
+  });
 });

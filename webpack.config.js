@@ -1,14 +1,15 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/table.js',
+  entry: './src/library.js',
   output: {
-    filename: 'mytable.js',
+    filename: 'mylib.js',
     path: path.resolve(__dirname, 'public/javascripts/'),
-    library: 'mytable'
+    library: 'mylib'
   },
   externals: {
-    jquery: 'jQuery'
+    jquery: 'jQuery',
+    vis: 'vis'
   },
   mode: 'development'
 };

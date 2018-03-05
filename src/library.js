@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import { DataSet, Network } from 'vis';
 
 export function myTable(container, data, options){
   var data_obj = data;
@@ -197,4 +198,26 @@ export function myTableOnline(container, request, options){
     }
     request(this);
   }
+}
+
+export function myGraph(container, data){
+  var options = {
+    nodes: {
+        shape: 'dot',
+        size: 16
+    },
+    physics: {
+        forceAtlas2Based: {
+            gravitationalConstant: -26,
+            centralGravity: 0.005,
+            springLength: 230,
+            springConstant: 0.18
+        },
+        maxVelocity: 146,
+        solver: 'forceAtlas2Based',
+        timestep: 0.35,
+        stabilization: {iterations: 150}
+    }
+  };
+  var network = new Network(container, data, options);
 }

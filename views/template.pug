@@ -4,7 +4,9 @@ html(language=en)
     link(href="/public/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet")
     link(href="/public/bootstrap-3.3.7-dist/css/dashboard.css" rel="stylesheet")
     link(href="/public/bootstrap-3.3.7-dist/css/flag-icon-css/css/flag-icon.css" rel="stylesheet")
-  
+    each file in css
+      link(href=file rel="stylesheet")
+    
   body
     script(src="/public/bootstrap-3.3.7-dist/js/jquery.min.js")
     script(src="/public/bootstrap-3.3.7-dist/js/bootstrap.min.js")
