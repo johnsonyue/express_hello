@@ -109,6 +109,7 @@ export function myTableOnline(container, request, options){
   var pager_size = typeof options.pager.pager_size !== "undefined" ? options.pager.pager_size : 10;
   myTableOnline.prototype.pager_front = typeof options.pager.pager_front !== "undefined" ? options.pager.pager_front : 1;
   var pager_active = typeof options.pager.pager_active !== "undefined" ? options.pager.pager_active : 1;
+  var table = this;
 
   container.innerHTML = '\
       <table class="table table-bordered table-hover col-md-10" id="ip_table">\
@@ -196,7 +197,7 @@ export function myTableOnline(container, request, options){
     }else{
       pager_active=parseInt($(this).html());
     }
-    request(this);
+    request(table);
   }
 }
 
